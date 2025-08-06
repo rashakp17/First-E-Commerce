@@ -10,6 +10,7 @@ const Payment = () => {
   }
   return (
     <div>
+      /kjkskjsjkhidshihgit
       <div className='flex flex-col gap-5'>
         <h2 className='text-white'>SELECT PAYMENT METHOD</h2>
           <label>
