@@ -44,7 +44,7 @@ const Cart = () => {
               onClick={()=>dispatch(clearCart())}>
                 CLEAR CART 
               </button>
-              
+            
             </div>
           )}
       </div>
