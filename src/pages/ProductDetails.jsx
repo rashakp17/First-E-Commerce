@@ -22,7 +22,7 @@ const ProductDetails = () => {
       <div className='container mx-auto px-4'>
         <div key={product.id} className='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-7'>
           <img
-            className='ml-20 mt-3 h-[450px] w-[450px]'
+            className='ml-20 mt-3 h-[450px] w-[450px] flex-shrink-0'
             src={product.image}
             alt={product.title}
           />

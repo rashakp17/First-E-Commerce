@@ -1,17 +1,18 @@
 
 import { useSelector } from 'react-redux';
-import homeone from '../assets/HM-IMG.webp'
-import hometwo from '../assets/HM-IMG.webp'
-import homethree from '../assets/HM-IMG.webp'
+import homeone from '../assets/HM-IMG4.webp'
+import hometwo from '../assets/HM-IMG2.webp'
+import homethree from '../assets/HM-IMG3.webp'
 import { Link, useNavigate, useSearchParams} from 'react-router-dom';
 import Footer from '../Component/Footer';
 
 
 const Home = () => {
+  const products = useSelector((state) => state.products)
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const category = searchParams.get("category");
-  const products = useSelector((state) => state.products)
+
  
 
   const filteredProducts = category ? 
@@ -25,7 +26,7 @@ const Home = () => {
       {/* home view */}
       <div className='relative w-full h-96 mt-5 '>
         <div >
-          <img className='ml-2 w-[1500px] h-96 flex-shrink-0 object-cover object-left-top ' src={homeone} />
+          <img className='ml-2 w-[1500px] h-96 flex-shrink-0 object-cover object-left-bottom ' src={homeone} />
         </div>
       </div>
       <div className='relative h w-full h-96 mt-5  '>
@@ -36,7 +37,7 @@ const Home = () => {
         
       <div className='relative w-full h-96  mt-5 '>
          <div >
-          <img className='ml-2 w-[1500px] h-96 flex-shrink-0 object-cover object-left-bottom' src={homethree} />
+          <img className='ml-2 w-[1500px] h-96 flex-shrink-0 object-cover object-center' src={homethree} />
         </div>
       </div>
        {/* category */}
