@@ -6,7 +6,7 @@ const OrderSummary = () => {
   const total = cartItems.reduce((acc, item )=> acc + item.price * item.quantity,0);
 
   return (
-    <div className='flex flex-col gap-3'>
+    <div className='mt-4 flex flex-col gap-3'>
       <h2 className='text-white font-opensans text-xl mb-4'>ORDER SUMMARY</h2>
               {cartItems.map((item,idx)=>
               <div key={idx} className='flex justify-between '>

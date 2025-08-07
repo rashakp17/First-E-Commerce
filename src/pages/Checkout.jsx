@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const Checkout = () => {
   return (
-    <div className='flex flex-row gap-4'>
+    <div className='flex flex-row gap-6'>
 
-      <div className='ml-[400px] flex flex-col gap-5 w-[800px] '>
+      <div className='ml-[400px] flex flex-col gap-5 w-[700px] '>
         <h2 className='text-white font-opensans text-xl font-semibold  mt-6 '>ADD DELIVERY DETAILS</h2>
         <div className=' flex flex-row gap-2'>
           <img className='mt-1 h-[18px] w-[18px]' src={callimg}/><h3 className='text-white'>CONTACT DETAILS</h3>
@@ -29,7 +29,7 @@ const Checkout = () => {
         <button className='mt-2 px-4 py-2 w-[610px] text-xl bg-gray-500 text-white rounded mb-20'> <Link to={`/payment`}>SAVE ADDRESS AND CONTINUE</Link> </button>
         
       </div>
-      <div className='mt-16'>
+      <div className='mt-20'>
         <OrderSummary />
 
       </div>

@@ -36,7 +36,7 @@ const Cart = () => {
           ))}
         </div>
           {cartItems.length > 0 && (
-            <div className='mt-4 flex flex-col gap-4'>
+            <div className=' flex flex-col gap-4'>
              <OrderSummary/>
               <button className='mt-2 px-4 py-2 w-72 text-xl bg-gray-500 text-white rounded' ><Link to={`/checkout`}>CONTINUE</Link> </button>
               <button
