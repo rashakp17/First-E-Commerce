@@ -2,10 +2,16 @@
 import { Link, Outlet } from 'react-router-dom';
 import Logoimg from '../assets/Logoimg.png';
 import { ShoppingCart } from 'lucide-react';
+import { useState } from 'react';
 
 
-const Navbar = () => {
+const Navbar = ({onSearch}) => {
+  const [search, setSearch] = useState('');
 
+  const handleSearchChange =(e) =>{
+    setSearch(e.target.value);
+    if (onSearch) onSearch(e.target.value);
+  }
   return (
     <div className='m-0 p-0'>
       <nav className='flex flex-row gap-7 bg-black text-white h-20 posiition-fixed '>
@@ -20,6 +26,8 @@ const Navbar = () => {
         <input 
         type="text" 
         placeholder='    Search'
+        value={search}
+        onChange={handleSearchChange}
         className='ml-7 mt-5 h-10 w-96 rounded-full pl-2 text-gray-500 font-opensans bg-zinc-900'
       />
       </nav>

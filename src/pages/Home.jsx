@@ -3,18 +3,22 @@
 import homeone from '../assets/HM-IMG4.webp'
 import hometwo from '../assets/HM-IMG2.webp'
 import homethree from '../assets/HM-IMG3.webp'
-import { Link, Outlet, useNavigate} from 'react-router-dom';
 import Footer from '../Component/Footer';
-import { Children } from 'react';
 import Products from './Products';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../Component/Navbar';
 
 
 const Home = () => {
- 
+  const [category, setCategory] = useState('');
+  const [search, setSearch] = useState('');
   const navigate = useNavigate();
   
 
-
+  const handleCategoryClick = (cat) => {
+    setCategory(cat);
+  }
  
 
 
@@ -24,6 +28,7 @@ const Home = () => {
 
   return (
     <div >
+      <Navbar onSearch={setSearch}/>
       {/* home view */}
       <div className='relative w-full h-96 mt-5 '>
         <div >
@@ -42,21 +47,45 @@ const Home = () => {
         </div>
       </div>
        {/* category */}
-       <div className='grid grid-cols-4 gap-4 mt-5 ml-2 '>
-
+      
        {/* Category Buttons */}
-      <div className='flex gap-4 mt-5 ml-2'>
+      <div className='flex flex-row justify-center gap-4 mt-5 ml-2'>
+        
+        <button
+          className='h-14 w-52 rounded-lg text-gray-500 bg-zinc-900'
+          onClick={() => navigate("/products")}
+        >
+          ALL
+        </button>
+        <button
+          className='h-14 w-52 rounded-lg text-gray-500 bg-zinc-900'
+          onClick={() => handleCategoryClick("electronics")}
+        >
+          ELECTRONICS
+        </button>
         <button
           className='h-14 w-36 rounded-lg text-gray-500 bg-zinc-900'
-          onClick={() => navigate("/products?category=electronics")}
+          onClick={() => handleCategoryClick("men's clothing")}
         >
-          Electronics
+          MEN' CLOTHING
+        </button>
+        <button
+          className='h-14 w-36 rounded-lg text-gray-500 bg-zinc-900'
+          onClick={() => handleCategoryClick("women's clothing")}
+        >
+          WOMEN'S CLOTHING
+        </button>
+        <button
+          className='h-14 w-36 rounded-lg text-gray-500 bg-zinc-900'
+          onClick={() => handleCategoryClick("jewelery")}
+        >
+          JEWELERY
         </button>
       
       </div>
       
-       </div>
-      <Products/>
+      
+      <Products category={category} search={search}/>
       <Footer />
       
       
