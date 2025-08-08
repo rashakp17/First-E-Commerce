@@ -11,10 +11,10 @@ const Navbar = ({onSearch}) => {
   const handleSearchChange =(e) =>{
     setSearch(e.target.value);
     if (onSearch) onSearch(e.target.value);
-  }
+  }     
   return (
     <div className='m-0 p-0'>
-      <nav className='flex flex-row gap-7 bg-black text-white h-20 posiition-fixed '>
+      <nav className='flex flex-row gap-7 bg-black text-white h-20 fixed mb-20'>
         <Link to="/" >
           <img src={Logoimg} className='md:w-[64px] sm:w-[20px] object-cover ml-5 mt-3 md:h-16 sm:h-[20px]' alt='logo' />
         </Link>

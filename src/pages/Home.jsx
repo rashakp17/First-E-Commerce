@@ -7,12 +7,11 @@ import Footer from '../Component/Footer';
 import Products from './Products';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../Component/Navbar';
 
 
 const Home = () => {
   const [category, setCategory] = useState('');
-  const [search, setSearch] = useState('');
+
   const navigate = useNavigate();
   
 
@@ -28,7 +27,7 @@ const Home = () => {
 
   return (
     <div >
-      <Navbar onSearch={setSearch}/>
+      
       {/* home view */}
       <div className='relative w-full h-96 mt-5 '>
         <div >
@@ -85,7 +84,7 @@ const Home = () => {
       </div>
       
       
-      <Products category={category} search={search}/>
+      <Products category={category} />
       <Footer />
       
       
