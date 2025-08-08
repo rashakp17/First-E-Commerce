@@ -50,7 +50,7 @@ const Home = () => {
         {Array.isArray(filteredProducts) && filteredProducts.map((product)=> (
           <div className='ml-1 h-[400px] w-[350px] mb-10' key={product.id}>
             <Link to={`/products/${product.id}`}>
-            <img className='ml-6 mt-3 h-64 w-72 ' src={product.image} alt={product.title} />
+            <img className='ml-6 mt-3 h-64 w-72 text-sm md:text-lg lg:text-xl' src={product.image} alt={product.title} />
             <h3 className='pl-2 h-20 w-[340px] text-white font-opensans font-semibold mt-3 text-center'>{product.title}</h3>
             <h3 className='text-yellow-600 font-bold text-center text-2xl'>Rs.{product.price}</h3>
             </Link>
