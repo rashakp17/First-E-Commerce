@@ -48,7 +48,8 @@ const Checkout = () => {
   };
 
   return (
-    <>
+    
+    <div className='pt-20'>
       <h2 className='text-white font-opensans text-xl font-semibold ml-[400px] mt-6 mb-5'>ADD DELIVERY DETAILS</h2>
       <div className='flex flex-row gap-6'>
 
@@ -140,7 +141,9 @@ const Checkout = () => {
           <OrderSummary />
         </div>
       </div>
-    </>
+    </div>
+      
+    
   );
 };
 

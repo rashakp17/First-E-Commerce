@@ -30,18 +30,18 @@ const Home = () => {
       
       <Navbar onSearch={setSearch}/>
       {/* home view */}
-      <div className='relative w-full h-96 mt-40 '>
+      <div className=' w-full h-[440px] pt-12  '>
         <div >
           <img className='ml-2 w-[1500px] h-96 flex-shrink-0 object-cover object-left-bottom ' src={homeone} />
         </div>
       </div>
-      <div className='relative h w-full h-96 mt-5  '>
+      <div className=' h w-full h-96 mt-5  '>
         <div >
           <img className='ml-2 w-[1500px] h-96 flex-shrink-0 object-cover object-center' src={hometwo} />
         </div>
       </div>
         
-      <div className='relative w-full h-96  mt-5 '>
+      <div className=' w-full h-96  mt-5 '>
          <div >
           <img className='ml-2 w-[1500px] h-96 flex-shrink-0 object-cover object-center' src={homethree} />
         </div>

@@ -14,7 +14,7 @@ const Cart = () => {
 
 
   return (
-    <div>
+    <div className='pt-20'>
       <h2 className='text-white font-opensans text-2xl font-bold text-center mt-6 m-5'>CART</h2>
       <div className='flex flex-row gap-7 '>
         <div>
