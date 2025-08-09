@@ -6,13 +6,13 @@ import homethree from '../assets/HM-IMG3.webp'
 import Footer from '../Component/Footer';
 import Products from './Products';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Navbar from '../Component/Navbar';
 
 
 const Home = () => {
   const [category, setCategory] = useState('');
+   const [search, setSearch] = useState('');
 
-  const navigate = useNavigate();
   
 
   const handleCategoryClick = (cat) => {
@@ -28,8 +28,9 @@ const Home = () => {
   return (
     <div >
       
+      <Navbar onSearch={setSearch}/>
       {/* home view */}
-      <div className='relative w-full h-96 mt-5 '>
+      <div className='relative w-full h-96 mt-40 '>
         <div >
           <img className='ml-2 w-[1500px] h-96 flex-shrink-0 object-cover object-left-bottom ' src={homeone} />
         </div>
@@ -52,7 +53,7 @@ const Home = () => {
         
         <button
           className='h-14 w-52 rounded-lg text-gray-500 bg-zinc-900'
-          onClick={() => navigate("/products")}
+          onClick={() => setCategory('')}
         >
           ALL
         </button>
@@ -84,7 +85,7 @@ const Home = () => {
       </div>
       
       
-      <Products category={category} />
+      <Products category={category} search={search }/>
       <Footer />
       
       

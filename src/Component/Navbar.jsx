@@ -14,8 +14,9 @@ const Navbar = ({onSearch}) => {
   }     
   return (
     <div className='m-0 p-0'>
-      <nav className='flex flex-row gap-7 bg-black text-white h-20 fixed mb-20'>
-        <Link to="/" >
+      <nav className='flex flex-row gap-7  bg-black text-white h-20 fixed w-full m-0 '>
+        
+          <Link to="/" >
           <img src={Logoimg} className='md:w-[64px] sm:w-[20px] object-cover ml-5 mt-3 md:h-16 sm:h-[20px]' alt='logo' />
         </Link>
         <Link to="/cart" className='ml-5 mt-5 '>
@@ -30,6 +31,8 @@ const Navbar = ({onSearch}) => {
         onChange={handleSearchChange}
         className='ml-7 mt-5 h-10 w-96 rounded-full pl-2 text-gray-500 font-opensans bg-zinc-900'
       />
+       
+        
       </nav>
       <div>
         <Outlet/>

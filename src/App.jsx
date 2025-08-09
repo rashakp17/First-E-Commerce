@@ -8,18 +8,18 @@ import Checkout from './pages/Checkout';
 import './App.css'
 import Navbar from './Component/Navbar';
 import Payment from './pages/Payment';
-import { useState } from 'react';
+
 
 function App() {
- const [search, setSearch] = useState('');
+
 
   return (
     <BrowserRouter>
       <Routes>
          
-        <Route path='/' element={<Navbar onSearch={setSearch}/>}>
-          <Route index element={<Home search={search}/> }/>
-          <Route path='/products' element={<Products search={search}/>} />
+        <Route path='/' element={<Navbar />}>
+          <Route index element={<Home /> }/>
+          <Route path='/products' element={<Products />} />
           <Route path='/products/:id' element={<ProductDetails/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/checkout' element={<Checkout/>}/>

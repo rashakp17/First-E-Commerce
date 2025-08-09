@@ -31,8 +31,13 @@ useEffect(() => {
       {loading && <p>Loading...</p>}
       {error && <p className='font-opensans text-red-800 '>Error: {error}</p>}
        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-2 mt-5 ml-2 mb-2'>
-        {filteredProducts.map((product)=> (
-          <div className='ml-1 h-[400px] w-[350px] mb-10' key={product.id}>
+        {filteredProducts.length === 0 ? (
+          <div className="text-center text-gray-500 text-3xl w- my-[200px]">
+            No products found.
+          </div>
+                ) : (
+              filteredProducts.map(product => (
+                <div className='ml-1 h-[400px] w-[350px] mb-10' key={product.id}>
             <Link to={`/products/${product.id}`}>
             <img className='ml-6 mt-3 h-64 w-72 flex-shrink-0' src={product.image} alt={product.title} />
             <h3 className='pl-2 h-20 w-[340px] text-white font-opensans font-semibold mt-3 text-center'>{product.title}</h3>
@@ -40,7 +45,8 @@ useEffect(() => {
             </Link>
             
             </div>
-        ))}
+              ))
+            )}
        </div>
 
     </div>
