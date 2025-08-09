@@ -1,17 +1,23 @@
-import {  useParams } from 'react-router-dom';
+import {  Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import star from '../assets/icons8-star-48.png';
-import Cart from './Cart';
+import Footer from '../Component/Footer';
 import { addToCart } from '../Features/CartSlice';
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const productId = parseInt(id);
+  console.log("product ID :",id)
 
   const product = useSelector((state) =>
     state.products.products.find((p) => p.id === productId)
   );
+  const allProducts = useSelector(state => state.products.products);
+  const relatedProducts = allProducts.filter(
+    p => p.category === product.category && p.id !== product.id
+  );
 
+  
   if (!product) {
     return <p className='text-red-700 text-2xl'>Product not found</p>;
   }
@@ -51,13 +57,30 @@ const ProductDetails = () => {
             
             <h3 className='h-48 w-[600px] text-white font-opensans font-semibold '>
               {product.description}
-            </h3>
-            
+            </h3> 
           </div>
-        
         </div>
       </div>
-      
+      <div>
+        {relatedProducts.length > 0 && (
+          <div>
+            <h2 className='text-white text-center text-xl font-bold mt-6 mb-4'>RELATED PRODUCTS</h2>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-2 mt-5 ml-2 mb-2'>
+              {relatedProducts.map(rp =>(
+                <div className='ml-1 h-[400px] w-[350px] mb-10' key={rp.id}>
+                  <Link to={`/products/${rp.id}`}>
+                  <img className='ml-6 mt-3 h-64 w-72 flex-shrink-0' src={rp.image} alt={rp.title} />
+                  <h3 className='pl-2 h-20 w-[340px] text-white font-opensans font-semibold mt-3 text-center'>{rp.title}</h3>
+                  <h3 className='text-yellow-600 font-bold text-center text-2xl'>Rs.{rp.price}</h3>
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        )}
+        <Footer/>
+      </div>
     </div>
   );
 };
