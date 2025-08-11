@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import star from '../assets/icons8-star-48.png';
 import Footer from '../Component/Footer';
 import { addToCart } from '../Features/CartSlice';
+import Navbar from '../Component/Navbar';
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -23,7 +24,9 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className='pt-20'>
+
+    <div className=''>
+      <Navbar />
       <h2 className='text-white font-opensans text-2xl font-bold text-center mt-6'>PRODUCT DETAILS</h2>
       <div className='container mx-auto px-2'>
         <div key={product.id} className='grid grid-cols-1 sm:grid-cols-2 gap-8 mt-7 items-center'>

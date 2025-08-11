@@ -1,5 +1,5 @@
 
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import Logoimg from '../assets/Logoimg.png';
 import { ShoppingCart } from 'lucide-react';
 import { useState } from 'react';
@@ -8,6 +8,9 @@ import { useSelector } from 'react-redux';
 
 const Navbar = ({onSearch}) => {
   const [search, setSearch] = useState('');
+  const location = useLocation();
+
+  const showSearchbar = location.pathname === '/' || location.pathname === '/home';
   const cartCount = useSelector(state => state.cart.cartItems.length);
   const handleSearchChange =(e) =>{
     setSearch(e.target.value);
@@ -32,10 +35,9 @@ const Navbar = ({onSearch}) => {
             
           </Link>
         </div>
-        
-
         <h4 className='font-irish text-2xl md:text-5xl text-white mt-3 md:mt-0 text-center md:ml-10 flex-1' >Aurezuk</h4>
-        <input 
+        {showSearchbar && (
+          <input 
         type="text" 
         placeholder='    Search'
         value={search}
@@ -43,6 +45,9 @@ const Navbar = ({onSearch}) => {
         className='mt-3 md:mt-0 h-10 w-full md:w-96 rounded-full pl-4 text-gray-500 font-opensans bg-zinc-900'
       />
        
+        )}
+        
+        
         
       </nav>
       <div className=''>
