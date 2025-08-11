@@ -1,8 +1,8 @@
 
 
 import homeone from '../assets/HM-IMG4.webp'
-import hometwo from '../assets/HM-IMG2.webp'
-import homethree from '../assets/HM-IMG3.webp'
+import hometwo from '../assets/freepik__i-want-a-photo-there-must-jewels-sling-bag-or-clut__19801.png'
+import homethree from '../assets/HM-IMG2.webp'
 import Footer from '../Component/Footer';
 import Products from './Products';
 import { useState } from 'react';
@@ -38,7 +38,7 @@ const Home = () => {
       {/* home view */}
       <div className=' w-full h-[440px] pt-12  '>
         <div >
-          <img className=' w-[1500px] h-96 flex-shrink-0 object-cover object-left-bottom ' src={homeone} />
+          <img className=' w-[1500px] h-96 flex-shrink-0 object-cover object-center ' src={homeone} />
         </div>
       </div>
       <div className=' h w-full h-96 mt-5  '>
@@ -55,7 +55,7 @@ const Home = () => {
        {/* category */}
       
        {/* Category Buttons */}
-      <div className='flex flex-row justify-center gap-4 mt-5 ml-2'>
+      <div className='flex lg:flex-row md:flex-col justify-center gap-4 mt-5 ml-2'>
         
         <button
           className='md:w-full sm:w-40  text-xl rounded-lg hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 mb-4 h-14  text-gray-500 bg-zinc-900'

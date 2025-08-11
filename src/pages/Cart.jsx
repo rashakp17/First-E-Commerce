@@ -16,9 +16,11 @@ const Cart = () => {
   return (
     <div className='pt-20'>
       <h2 className='text-white font-opensans text-2xl font-bold text-center mt-6 m-5'>CART</h2>
+      {cartItems.length === 0 && <p className=' text-5xl text-center font-bold text-white justify-center'>Cart is empty</p>}
       <div className='flex flex-row gap-7 '>
+
         <div>
-          {cartItems.length === 0 && <p className='flex text-5xl text-center font-bold text-yellow-50 items-center justify-center'>Cart is empty</p>}
+          
           {cartItems.map((item)=>(
           
             <div key={item.id} className='flex items-center flex-row h-36  w-[700px] justify-center my-4 ml-[400px]'>

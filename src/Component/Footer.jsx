@@ -7,7 +7,8 @@ const Footer = () => {
   return (
     <div>
       <footer className='bg-gray-600 text-white py-4 mt-10 flex flex-row justify-between '>
-        <div>
+        <div className='mx-auto'>
+        
           <ul className='list-none ml-[100px]'>
             <li><Link to="/?category=electronics">Electronics</Link> </li>
             <li><Link to="/?category=men's clothing">Men's Clothing</Link></li>
@@ -36,6 +37,8 @@ const Footer = () => {
           </div>
         </div>
 
+ 
+        
       </footer>
     </div>
   );
