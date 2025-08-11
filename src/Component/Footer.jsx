@@ -9,10 +9,10 @@ const Footer = () => {
       <footer className='bg-gray-600 text-white py-4 mt-10 flex flex-row justify-between '>
         <div>
           <ul className='list-none ml-[100px]'>
-            <li>Electronics</li>
-            <li>Men's Clothing</li>
-            <li>Women's Clothing</li>
-            <li>Jewellery</li>
+            <li><Link to="/?category=electronics">Electronics</Link> </li>
+            <li><Link to="/?category=men's clothing">Men's Clothing</Link></li>
+            <li><Link to="/?category=women's clothing">Women's Clothing</Link></li>
+            <li><Link to="/?category=jewelery">Jewellery</Link></li>
           </ul>
         </div> 
         <div>

@@ -15,15 +15,17 @@ const Navbar = ({onSearch}) => {
   }     
   return (
     <div className=' p-0'>
-      <nav className='flex flex-row gap-7  bg-black text-white h-28 fixed w-full mt-0 pt-5 '>
-        
+      <nav className='flex  md:flex-row items-center justify-between gap-10 bg-black text-white h-auto md:h-28 fixed w-full top-0 left-0 z-50 px-4 py-3'>
+        <div className='flex items-center w-full md:w-auto'>
           <Link to="/" >
-          <img src={Logoimg} className='md:w-[64px] sm:w-[20px] object-cover ml-5 mt-3 md:h-16 sm:h-[20px]' alt='logo' />
-        </Link>
-        <div className='relative'>
-          <Link to="/cart" className='ml-5 mt-5 '>
+            <img src={Logoimg} className='w-12 h-12 md:w-16 md:h-16 object-cover ' alt='logo' />
+          </Link>
+        </div>
+          
+        <div className='relative mt-3 md:mt-0'>
+          <Link to="/cart" className='block '>
           {cartCount >0 && (
-              <span className='absolute -top-0 -right-3 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold'>
+              <span className='absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold'>
                 {cartCount}</span>
             )}
             <ShoppingCart size={35} />
@@ -32,18 +34,18 @@ const Navbar = ({onSearch}) => {
         </div>
         
 
-        <h4 className='font-irish text-5xl text-white-700 mt-3 ml-96 text-center' >Aurezuk</h4>
+        <h4 className='font-irish text-2xl md:text-5xl text-white mt-3 md:mt-0 text-center md:ml-10 flex-1' >Aurezuk</h4>
         <input 
         type="text" 
         placeholder='    Search'
         value={search}
         onChange={handleSearchChange}
-        className='ml-7 mt-5 h-10 w-96 rounded-full pl-2 text-gray-500 font-opensans bg-zinc-900'
+        className='mt-3 md:mt-0 h-10 w-full md:w-96 rounded-full pl-4 text-gray-500 font-opensans bg-zinc-900'
       />
        
         
       </nav>
-      <div>
+      <div className=''>
         <Outlet/>
       </div>
     </div>
