@@ -62,12 +62,13 @@ const Home = () => {
           onClick={() => handleCategoryClick('')}
         >
           ALL
+                  
         </button>
         <button
           className='h-14 w-full rounded-lg hover:bg-gray-600 text-gray-500 active:bg-gray-400 bg-zinc-900'
           onClick={() => handleCategoryClick('electronics')}
         >
-          ELECTRONICS
+          ELECTRONICS          
         </button>
         <button
           className='h-14 w-full rounded-lg hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 text-gray-500 bg-zinc-900'
@@ -90,8 +91,8 @@ const Home = () => {
       
       </div>
       
-      
       <Products category={category} search={search }/>
+      
       <Footer />
       
       

@@ -9,7 +9,41 @@ import { useSelector } from 'react-redux';
 const Navbar = ({onSearch}) => {
   const [search, setSearch] = useState('');
   const location = useLocation();
+  const steps =[
+    {id :1 , label :'Cart' , path: '/cart'},
+    {id :2 , label :'Address' , path: '/checkout'},
+    {id :3 , label :'payment' , path: '/payment'}
+  ];
 
+  const getCurrentStep =() =>{
+    const currentPath = location.pathname;
+    const step = steps.find(s =>s.path === currentPath);
+    return step ? step.id :1;
+    }
+  const currentStep = getCurrentStep();
+
+ const getStepClasses = (stepId) => {
+    if (stepId < currentStep) {
+      return 'bg-transparent text-white border-white border-2'; // Completed
+    } else if (stepId === currentStep) {
+      return 'bg-transparent text-white border-white border-2'; // Current
+    } else {
+      return 'bg-transparent text-gray-500 border-gray-300'; // Upcoming
+    }
+  };
+  const getTextClasses = (stepId) => {
+    if (stepId <= currentStep) {
+      return 'text-white font-semibold'; // Active/completed text
+    }
+    return 'text-gray-500'; // Inactive text
+  };
+  const getlineClasses =(stepId)=>{
+    if(stepId < currentStep){
+      return 'bg-white';
+    }
+    return 'bg-gray-500';
+  }
+  const showHeader = location.pathname === '/cart'|| location.pathname === '/checkout' || location.pathname === '/payment' ;
   const showSearchbar = location.pathname === '/' || location.pathname === '/home';
   const cartCount = useSelector(state => state.cart.cartItems.length);
   const handleSearchChange =(e) =>{
@@ -18,7 +52,7 @@ const Navbar = ({onSearch}) => {
   }     
   return (
     <div className=' p-0'>
-      <nav className='flex  md:flex-row items-center justify-between gap-10 bg-black text-white h-auto md:h-28 fixed w-full top-0 left-0 z-50 px-4 py-3'>
+      <nav className='flex  md:flex-row items-center  md:gap-60 bg-black text-white h-auto md:h-28 fixed w-full top-0 left-0 z-50 px-4 py-3'>
         <div className='flex items-center w-full md:w-auto'>
           <Link to="/" >
             <img src={Logoimg} className='w-12 h-12 md:w-16 md:h-16 object-cover ' alt='logo' />
@@ -35,7 +69,43 @@ const Navbar = ({onSearch}) => {
             
           </Link>
         </div>
-        <h4 className='font-irish text-2xl md:text-5xl text-white mt-3 md:mt-0 text-center md:ml-10 flex-1' >Aurezuk</h4>
+        <div className='flex flex-col'>
+          <div>
+            <h4 className='font-irish text-2xl md:text-5xl text-white mt-3 md:mt-0 text-center md:ml-10 flex-1'>
+              Aurezuk
+            </h4>
+          </div>
+          {showHeader && (
+             <div className='flex flex-row md:ml-10'>
+            {steps.map((step, index) => (
+            <div key={step.id} className="flex items-center">
+            {/* Small Step Circle */}
+              <div className="flex flex-col items-center">
+                <div className={`w-5 h-5 rounded-full border flex items-center justify-center text-xs font-semibold ${getStepClasses(step.id)}`}>
+                {step.id < currentStep ? '✓' : step.id}
+                </div>
+                <span className={`mt-1 text-xs ${getTextClasses(step.id)}`}>
+                  {step.label}
+                </span>
+              </div>
+
+            {/* Connecting Line - Same space as circle */}
+            {index < steps.length - 1 && (
+              <div className="w-6 mx-2">
+                <div className={`h-0.5 w-full ${getlineClasses(step.id)}`}></div>
+              </div>
+            )}
+          </div>
+          ))}
+          </div>
+          )}
+         
+        
+        </div>
+      
+           
+
+        
         {showSearchbar && (
           <input 
         type="text" 
