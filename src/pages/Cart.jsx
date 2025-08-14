@@ -40,9 +40,9 @@ const Cart = () => {
           {cartItems.length > 0 && (
             <div className=' flex flex-col gap-4'>
              <OrderSummary/>
-              <button className='mt-2 px-4 py-2 w-72 text-xl bg-gray-500 text-white rounded' ><Link to={`/checkout`}>CONTINUE</Link> </button>
+              <button className='w-full sm:w-80 text-white bg-gray-500 text-xl font-semibold h-10 rounded-lg hover:bg-gray-700 mb-4 active:bg-gray-400 active:bg-opacity-50' ><Link to={`/checkout`}>CONTINUE</Link> </button>
               <button
-              className='mt-2 px-4 py-2 w-72 text-xl bg-gray-500 text-white text- rounded'
+              className='w-full sm:w-80 text-white bg-gray-500 text-xl font-semibold h-10 rounded-lg hover:bg-gray-700 mb-4 active:bg-gray-400 active:bg-opacity-50'
               onClick={()=>dispatch(clearCart())}>
                 CLEAR CART 
               </button>

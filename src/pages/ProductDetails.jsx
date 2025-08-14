@@ -27,7 +27,7 @@ const ProductDetails = () => {
 
     <div className=''>
       <Navbar />
-      <h2 className='text-white font-opensans text-2xl font-bold text-center mt-6'>PRODUCT DETAILS</h2>
+      <h2 className='text-white font-opensans text-2xl font-bold text-center mt-32'>PRODUCT DETAILS</h2>
       <div className='container mx-auto px-2'>
         <div key={product.id} className='grid grid-cols-1 sm:grid-cols-2 gap-8 mt-7 items-center'>
           <img
@@ -36,7 +36,7 @@ const ProductDetails = () => {
             alt={product.title}
           />
           <div>
-            <button className='w-full sm:w-80 text-white bg-gray-500 text-xl font-semibold h-10 rounded-lg hover:bg-gray-700 mb-4'
+            <button className='w-full sm:w-80 text-white bg-gray-500 text-xl font-semibold h-10 rounded-lg hover:bg-gray-700 mb-4 active:bg-gray-400 active:bg-opacity-50'
             onClick={()=>
               dispatch(addToCart({
                 id:product.id,

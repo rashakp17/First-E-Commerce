@@ -130,7 +130,7 @@ const Checkout = () => {
           />
 
           <button
-            className='mt-2 px-4 py-2 w-[610px] text-xl bg-gray-500 text-white rounded mb-20'
+            className='mt-2 px-4 py-2 md:w-full sm:w-80 text-white bg-gray-500 text-xl font-semibold h-10 rounded-lg hover:bg-gray-700 mb-4 active:bg-gray-400 active:bg-opacity-50'
             onClick={handleSubmit}
           >
             SAVE ADDRESS AND CONTINUE
