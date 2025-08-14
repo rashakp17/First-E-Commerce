@@ -38,52 +38,52 @@ const Home = () => {
       {/* home view */}
       <div className=' w-full h-[440px] pt-12  '>
         <div >
-          <img className=' w-[1500px] h-96 flex-shrink-0 object-cover object-center ' src={homeone} />
+          <img className=' w-[1510px] h-96 flex-shrink-0 object-cover object-center ' src={homeone} />
         </div>
       </div>
       <div className=' h w-full h-96 mt-5  '>
         <div >
-          <img className='w-[1500px] h-96 flex-shrink-0 object-cover object-center' src={hometwo} />
+          <img className='w-[1510px] h-96 flex-shrink-0 object-cover object-center' src={hometwo} />
         </div>
       </div>
         
       <div className=' w-full h-96  mt-5 '>
          <div >
-          <img className='w-[1500px] h-96 flex-shrink-0 object-cover object-center' src={homethree} />
+          <img className='w-[1510px] h-96 flex-shrink-0 object-cover object-center' src={homethree} />
         </div>
       </div>
        {/* category */}
       
        {/* Category Buttons */}
-      <div className='flex lg:flex-row md:flex-col justify-center gap-4 mt-5 ml-2'>
+      <div className='flex overflow-x-auto whitespace-nowrap scrollbar-hide flex-row justify-center gap-4 mt-5'>
         
         <button
-          className='md:w-full sm:w-40  text-xl rounded-lg hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 mb-4 h-14  text-gray-500 bg-zinc-900'
+          className='h-14 md:w-full rounded-lg text-gray-500 hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 bg-zinc-900'
           onClick={() => handleCategoryClick('')}
         >
           ALL
                   
         </button>
         <button
-          className='h-14 w-full rounded-lg hover:bg-gray-600 text-gray-500 active:bg-gray-400 bg-zinc-900'
+          className='h-14 md:w-full rounded-lg text-gray-500 hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 bg-zinc-900'
           onClick={() => handleCategoryClick('electronics')}
         >
           ELECTRONICS          
         </button>
         <button
-          className='h-14 w-full rounded-lg hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 text-gray-500 bg-zinc-900'
+          className='h-14 md:w-full rounded-lg hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 text-gray-500 bg-zinc-900'
           onClick={() => handleCategoryClick("men's clothing")}
         >
-          MEN' CLOTHING
+          MEN'S CLOTHING
         </button>
         <button
-          className='h-14 w-full rounded-lg text-gray-500 hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 bg-zinc-900'
+          className='h-14 md:w-full rounded-lg text-gray-500 hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 bg-zinc-900'
           onClick={() => handleCategoryClick("women's clothing")}
         >
           WOMEN'S CLOTHING
         </button>
         <button
-          className='h-14 w-full rounded-lg hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 text-gray-500 bg-zinc-900'
+          className='h-14 md:w-full rounded-lg hover:bg-gray-700 active:bg-gray-500 active:text-gray-600 transition duration-100 text-gray-500 bg-zinc-900'
           onClick={() => handleCategoryClick('jewelery')}
         >
           JEWELERY

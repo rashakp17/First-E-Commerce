@@ -53,24 +53,24 @@ const Navbar = ({onSearch}) => {
   }     
   return (
     <div className=' p-0'>
-      <nav className='flex flex-col md:flex-row  items-center gap-10  md:gap-60  lg:gap-80 bg-black text-white h-auto md:h-28 fixed w-full top-0 left-0 z-50 px-4 py-3'>
-        <div className='flex flex-row gap-6 md:gap-10'>
-          <div className='flex items-center w-full md:w-auto'>
-            <Link to="/" >
-              <img src={Logoimg} className='w-12 h-12 md:w-16 md:h-16 object-cover ' alt='logo' />
-            </Link>
-          </div>
-          
-          <div className='relative mt-3 md:mt-0'>
-              <Link to="/cart" className='block '>
-                {cartCount >0 && (
-                  <span className='absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold'>
-                    {cartCount}</span>
-                )}
-                <ShoppingCart size={35} />
-                
+      <nav className='flex flex-col md:flex-row  items-center gap-1  md:gap-60  lg:gap-80 bg-black text-white h-auto md:h-28 fixed w-full top-0 left-0 z-50 px-4 py-3'>
+          <div className='flex flex-row gap-6 md:gap-10'>
+            <div className='flex items-center w-full md:w-auto'>
+              <Link to="/" >
+                <img src={Logoimg} className='w-12 h-12 md:w-16 md:h-16 object-cover ' alt='logo' />
               </Link>
-          </div>
+            </div>
+          
+            <div className='relative mt-3 md:mt-0'>
+                <Link to="/cart" className='block '>
+                  {cartCount >0 && (
+                    <span className='absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold'>
+                      {cartCount}</span>
+                  )}
+                  <ShoppingCart size={35} />
+                  
+                </Link>
+            </div>
           
             <div>
               {showBrand && (
