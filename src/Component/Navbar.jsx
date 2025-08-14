@@ -53,8 +53,8 @@ const Navbar = ({onSearch}) => {
   }     
   return (
     <div className=' p-0'>
-      <nav className='flex flex-col md:flex-row items-center gap-10  md:gap-60 bg-black text-white h-auto md:h-28 fixed w-full top-0 left-0 z-50 px-4 py-3'>
-        <div className='flex flex-row md:gap-10'>
+      <nav className='flex flex-col md:flex-row  items-center gap-10  md:gap-60  lg:gap-80 bg-black text-white h-auto md:h-28 fixed w-full top-0 left-0 z-50 px-4 py-3'>
+        <div className='flex flex-row gap-6 md:gap-10'>
           <div className='flex items-center w-full md:w-auto'>
             <Link to="/" >
               <img src={Logoimg} className='w-12 h-12 md:w-16 md:h-16 object-cover ' alt='logo' />
@@ -74,7 +74,7 @@ const Navbar = ({onSearch}) => {
           
             <div>
               {showBrand && (
-                <h4 className='font-irish text-2xl md:text-5xl text-white mt-3 md:mt-0 text-center md:ml-10 flex-1'>
+                <h4 className='flex justify-center items-center font-irish text-2xl md:text-5xl text-white mt-3 md:mt-0 text-center md:ml-10 flex-1'>
                   Aurezuk
                 </h4>
               )}

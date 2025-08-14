@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div>
-      <footer className='bg-gray-600 text-white py-4 mt-10 flex flex-row justify-between '>
+      <footer className='bg-gray-600 text-white px-5 gap-5  md:px-10 md:py-4 mt-10 flex flex-row justify-between '>
         <div className='mx-auto'>
         
-          <ul className='list-none ml-[100px]'>
+          <ul className='list-none '>
             <li><Link to="/?category=electronics">Electronics</Link> </li>
             <li><Link to="/?category=men's clothing">Men's Clothing</Link></li>
             <li><Link to="/?category=women's clothing">Women's Clothing</Link></li>
@@ -17,7 +17,7 @@ const Footer = () => {
           </ul>
         </div> 
         <div>
-          <ul className='list-none'>
+          <ul className='list-none w-20'>
             <li>About us</li>
             <li>Privacy policy</li>
             <li>Terms of service</li>

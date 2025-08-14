@@ -42,7 +42,7 @@ useEffect(() => {
                 <div className=' rounded-lg p-4 flex flex-col items-center mb-6 max-w-xs w-full hover:shadow-lg hover:scale-105 transition-all duration-200' key={product.id}>
             <Link to={`/products/${product.id}`}>
             <img className='h-40 w-auto object-contain mb-2 mx-auto' src={product.image} alt={product.title} />
-            <h3 className='text-white font-opensans font-semibold mt-3 text-center text-base sm:text-lg'>{product.title}</h3>
+            <h3 className='text-white font-opensans font-semibold mx-0 mt-3 text-center text-base sm:text-lg'>{product.title}</h3>
             <h3 className='text-yellow-600 font-bold text-center text-xl sm:text-2xl'>Rs.{product.price}</h3>
             </Link>
             
