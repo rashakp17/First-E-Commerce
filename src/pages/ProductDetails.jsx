@@ -28,7 +28,7 @@ const ProductDetails = () => {
     <div className=''>
       <Navbar />
       <h2 className='text-white font-opensans text-2xl font-bold text-center mt-32'>PRODUCT DETAILS</h2>
-      <div className='container mx-auto px-2'>
+      <div className='container mx-auto px-5'>
         <div key={product.id} className='grid grid-cols-1 sm:grid-cols-2 gap-8 mt-7 items-center'>
           <img
             className='w-full max-w-xs h-auto mx-auto object-contain'
