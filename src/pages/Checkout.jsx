@@ -53,7 +53,7 @@ const Checkout = () => {
       <h2 className='text-white font-opensans w-80 ml-3 text-xl font-semibold md:ml-[400px] mt-6 mb-5'>ADD DELIVERY DETAILS</h2>
       <div className='flex flex-col md:flex-row gap-6 w-80'>
 
-        <div className='md:ml-[400px] flex flex-col gap-5 mx-3 w-80 md:w-[700px]'>
+        <div className='md:ml-[400px] flex flex-col gap-5 mx-3 w-80  md:w-[800px]'>
 
           <div className='flex flex-row gap-2'>
             <img className='mt-1 h-[18px] w-[18px]' src={callimg} />
@@ -130,7 +130,7 @@ const Checkout = () => {
           />
 
           <button
-            className='mt-2 mx-4 px-4 py-2 text-sm md:w-full w-80 text-white bg-gray-500 md:text-xl font-semibold h-10 rounded-lg hover:bg-gray-700 mb-4 active:bg-gray-400 active:bg-opacity-50'
+            className='mt-2 mx-4 px-4 py-2 text-sm md:w-full  w-80 text-white bg-gray-500 md:text-xl font-semibold h-10 rounded-lg hover:bg-gray-700 mb-4 active:bg-gray-400 active:bg-opacity-50'
             onClick={handleSubmit}
           >
             SAVE ADDRESS AND CONTINUE

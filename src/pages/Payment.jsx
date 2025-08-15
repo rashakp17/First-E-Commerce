@@ -193,12 +193,12 @@ const Payment = () => {
         </label>
         {selectedPaymentMethod === 'Wallet Payment'&&(
           <div>
-            <div className='flex flex-row gap-4'>
-            <button className='h-10 w-40 border-2 bg-gray-600 bg-opacity-40 border-gray-500 text-white rounded hover:bg-opacity-30 active:bg-opacity-60' onClick={handleWalletProviderSelect}>MetaMask 🦊</button>
-            <button className='h-10 w-40 border-2 bg-gray-600 bg-opacity-40 border-gray-500 text-white rounded hover:bg-opacity-30 active:bg-opacity-60' onClick={handleWalletProviderSelect}>Trust Wallet 🔒</button>
-            <button className='h-10 w-40 border-2 bg-gray-600 bg-opacity-40 border-gray-500 text-white rounded hover:bg-opacity-30 active:bg-opacity-60' onClick={handleWalletProviderSelect}>Coinbase Wallet 🟦</button>
-            <button className='h-10 w-40 border-2 bg-gray-600 bg-opacity-40 border-gray-500 text-white rounded hover:bg-opacity-30 active:bg-opacity-60' onClick={handleWalletProviderSelect}>Phantom 👻</button>
-          </div>
+            <div className='flex flex-col md:flex-row gap-4'>
+              <button className='h-10 w-40 border-2 bg-gray-600 bg-opacity-40 border-gray-500 text-white rounded hover:bg-opacity-30 text-sm active:bg-opacity-60' onClick={handleWalletProviderSelect}>MetaMask 🦊</button>
+              <button className='h-10 w-40 border-2 bg-gray-600 bg-opacity-40 border-gray-500 text-white rounded hover:bg-opacity-30 text-sm active:bg-opacity-60' onClick={handleWalletProviderSelect}>Trust Wallet 🔒</button>
+              <button className='h-10 w-40 border-2 bg-gray-600 bg-opacity-40 border-gray-500 text-white rounded hover:bg-opacity-30 text-sm active:bg-opacity-60' onClick={handleWalletProviderSelect}>Coinbase Wallet 🟦</button>
+              <button className='h-10 w-40 border-2 bg-gray-600 bg-opacity-40 border-gray-500 text-white rounded hover:bg-opacity-30 text-sm active:bg-opacity-60' onClick={handleWalletProviderSelect}>Phantom 👻</button>
+            </div>
           {errors.WalletProvider && <p className='text-red-500 text-sm'>{errors.WalletProvider}</p>}
           <input 
             type='text'
