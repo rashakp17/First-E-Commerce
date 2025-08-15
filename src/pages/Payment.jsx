@@ -92,9 +92,9 @@ const Payment = () => {
 
  
   return (
-    <div className='ml-[400px] flex flex-row pt-20'>
+    <div className='md:ml-[400px] flex flex-col md:flex-row pt-28'>
       
-      <div className='flex flex-col gap-5 w-[700px] '>
+      <div className='flex flex-col gap-5 md:w-[700px] mx-3'>
         <h2 className='text-white text-xl font-semibold mt-6'>SELECT PAYMENT METHOD</h2>
         {/* cash on delivery */}
           <label>
@@ -216,7 +216,7 @@ const Payment = () => {
         }
         
       </div>
-      <div className='mt-[66px] ml-7 flex flex-col gap-5'>
+      <div className='mt-[66px] mx-4 md:ml-7 flex flex-col gap-5'>
         <OrderSummary/>
         <button 
         onClick={handleSubmit}

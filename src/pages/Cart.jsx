@@ -15,7 +15,7 @@ const Cart = () => {
 
   return (
     <div className='pt-20'>
-      <h2 className='text-white font-opensans text-2xl font-bold text-center mt-6 m-5'>CART</h2>
+      <h2 className='text-white font-opensans text-2xl font-bold text-center mt-9 md:mt-6 m-5'>CART</h2>
       {cartItems.length === 0 && <p className=' text-5xl text-center font-bold text-white md:justify-center'>Cart is empty</p>}
       <div className='flex flex-col md:flex-row gap-7 '>
 

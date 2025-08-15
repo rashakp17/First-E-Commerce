@@ -72,7 +72,7 @@ const ProductDetails = () => {
               {relatedProducts.map(rp =>(
                 <div className=' rounded-lg p-4 flex flex-col items-center mb-6 max-w-xs w-full hover:shadow-lg hover:scale-105 transition-all duration-200' key={rp.id}>
                   <Link to={`/products/${rp.id}`}>
-                  <img className='w-full max-w-[180px] h-auto object-contain mb-2' src={rp.image} alt={rp.title} />
+                  <img className='h-40 w-auto object-contain mb-2 mx-auto' src={rp.image} alt={rp.title} />
                   <h3 className='text-white font-opensans font-semibold mt-3 text-center text-base sm:text-lg'>{rp.title}</h3>
                   <h3 className='text-yellow-600 font-bold text-center text-xl sm:text-2xl'>Rs.{rp.price}</h3>
                   </Link>
