@@ -72,7 +72,7 @@ const Navbar = ({onSearch}) => {
                 </Link>
             </div>
           
-            <div>
+            <div className='md:ml-96'>
               {showBrand && (
                 <h4 className='flex justify-center items-center font-irish text-2xl md:text-5xl text-white mt-3 md:mt-0 text-center md:ml-10 flex-1'>
                   Aurezuk
@@ -82,7 +82,7 @@ const Navbar = ({onSearch}) => {
         </div>
 
           {showHeader && (
-             <div className='flex flex-row md:ml-10'>
+             <div className='flex flex-row'>
               {steps.map((step, index) => (
               <div key={step.id} className="flex items-center">
                 {/* Small Step Circle */}
