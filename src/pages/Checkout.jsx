@@ -62,7 +62,7 @@ const Checkout = () => {
 
           <input
             name="name"
-            placeholder="NAME"
+            placeholder="Name"
             className='input bg-transparent text-white'
             onChange={handleChange}
           />
@@ -70,7 +70,7 @@ const Checkout = () => {
 
           <input
             name="contact"
-            placeholder="CONTACT NUMBER"
+            placeholder="Contact number"
             className='input bg-transparent text-white'
             onChange={handleChange}
           />
@@ -83,7 +83,7 @@ const Checkout = () => {
 
           <input
             name="house"
-            placeholder="HOUSE NO./BUILDING NO."
+            placeholder="House no./Building no."
             className='input bg-transparent text-white'
             onChange={handleChange}
           />
@@ -91,7 +91,7 @@ const Checkout = () => {
 
           <input
             name="road"
-            placeholder="ROAD NAME /AREA /COLONY"
+            placeholder="Roas name /Area /Colony"
             className='input bg-transparent text-white'
             onChange={handleChange}
           />
@@ -99,7 +99,7 @@ const Checkout = () => {
 
           <input
             name="pincode"
-            placeholder="PINCODE"
+            placeholder="Pincode"
             className='input bg-transparent text-white'
             onChange={handleChange}
           />
@@ -108,13 +108,13 @@ const Checkout = () => {
           <div className='flex flex-row gap-2'>
             <input
               name="city"
-              placeholder="CITY"
+              placeholder="City"
               className='input bg-transparent text-white'
               onChange={handleChange}
             />
             <input
               name="state"
-              placeholder="STATE"
+              placeholder="State"
               className='input bg-transparent text-white'
               onChange={handleChange}
             />
@@ -124,7 +124,7 @@ const Checkout = () => {
 
           <input
             name="landmark"
-            placeholder="NEARBY FAMOUS PLACE /SHOP /SCHOOL (OPTIONAL)"
+            placeholder="Nearby famous place /Shop /School (Optional)"
             className='input bg-transparent w-80 text-white'
             onChange={handleChange}
           />
