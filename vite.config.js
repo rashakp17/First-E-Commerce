@@ -5,10 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: './',
   build: {
-    rollupOptions: {
-      external: ['react-redux']
-      
-    }
+   
   }
 });
 
