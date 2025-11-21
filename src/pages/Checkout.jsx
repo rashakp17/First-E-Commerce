@@ -49,11 +49,11 @@ const Checkout = () => {
 
   return (
     
-    <div className='pt-28'>
+    <div >
       <h2 className='text-white font-opensans w-80 ml-3 text-xl font-semibold md:ml-[400px] mt-6 mb-5'>ADD DELIVERY DETAILS</h2>
-      <div className='flex flex-col md:flex-row gap-6 w-80'>
-
-        <div className='md:ml-[400px] flex flex-col gap-5 mx-3 w-80  md:w-[800px]'>
+      <div className='flex flex-col md:flex-row justify-between'>
+        
+        <div className='md:ml-[400px] flex flex-col gap-5 mx-5 w-80  md:w-[600px]'>
 
           <div className='flex flex-row gap-2'>
             <img className='mt-1 h-[18px] w-[18px]' src={callimg} />
@@ -63,7 +63,7 @@ const Checkout = () => {
           <input
             name="name"
             placeholder="Name"
-            className='input bg-transparent text-white'
+            className='border-b border-gray-400 focus:border-black outline-none w-80 input bg-transparent text-white'
             onChange={handleChange}
           />
           {errors.name && <p className='text-red-500 text-sm'>{errors.name}</p>}
@@ -71,7 +71,7 @@ const Checkout = () => {
           <input
             name="contact"
             placeholder="Contact number"
-            className='input bg-transparent text-white'
+            className='border-b border-gray-400 focus:border-black outline-none w-80 input bg-transparent text-white'
             onChange={handleChange}
           />
           {errors.contact && <p className='text-red-500 text-sm'>{errors.contact}</p>}
@@ -84,7 +84,7 @@ const Checkout = () => {
           <input
             name="house"
             placeholder="House no./Building no."
-            className='input bg-transparent text-white'
+            className='border-b border-gray-400 focus:border-black outline-none w-80 input bg-transparent text-white'
             onChange={handleChange}
           />
           {errors.house && <p className='text-red-500 text-sm'>{errors.house}</p>}
@@ -92,7 +92,7 @@ const Checkout = () => {
           <input
             name="road"
             placeholder="Roas name /Area /Colony"
-            className='input bg-transparent text-white'
+            className='border-b border-gray-400 focus:border-black outline-none w-80 input bg-transparent text-white'
             onChange={handleChange}
           />
           {errors.road && <p className='text-red-500 text-sm'>{errors.road}</p>}
@@ -100,7 +100,7 @@ const Checkout = () => {
           <input
             name="pincode"
             placeholder="Pincode"
-            className='input bg-transparent text-white'
+            className='border-b border-gray-400 focus:border-black outline-none w-80 input bg-transparent text-white'
             onChange={handleChange}
           />
           {errors.pincode && <p className='text-red-500 text-sm'>{errors.pincode}</p>}
@@ -109,13 +109,13 @@ const Checkout = () => {
             <input
               name="city"
               placeholder="City"
-              className='input bg-transparent text-white'
+              className='border-b border-gray-400 focus:border-black outline-none w-60 input bg-transparent text-white'
               onChange={handleChange}
             />
             <input
               name="state"
               placeholder="State"
-              className='input bg-transparent text-white'
+              className='border-b border-gray-400 focus:border-black outline-none w-60 input bg-transparent text-white'
               onChange={handleChange}
             />
           </div>
@@ -125,19 +125,19 @@ const Checkout = () => {
           <input
             name="landmark"
             placeholder="Nearby famous place /Shop /School (Optional)"
-            className='input bg-transparent w-80 text-white'
+            className='border-b border-gray-400 focus:border-black outline-none w-[350px]  input bg-transparent  text-white'
             onChange={handleChange}
           />
 
           <button
-            className='mt-2 mx-4 px-4 py-2 text-sm md:w-full  w-80 text-white bg-gray-500 md:text-xl font-semibold h-10 rounded-lg hover:bg-gray-700 mb-4 active:bg-gray-400 active:bg-opacity-50'
+            className='mt-2 px-4  text-sm md:w-[400px]  w-80 text-white bg-gray-500 md:text-lg h-10 rounded-lg hover:bg-gray-700 mb-4 active:bg-gray-400 active:bg-opacity-50'
             onClick={handleSubmit}
           >
             SAVE ADDRESS AND CONTINUE
           </button>
         </div>
 
-        <div className='mx-10 mb-10 '>
+        <div className=' mb-10 '>
           <OrderSummary />
         </div>
       </div>

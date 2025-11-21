@@ -92,7 +92,7 @@ const Payment = () => {
 
  
   return (
-    <div className='md:ml-[400px] flex flex-col md:flex-row pt-28'>
+    <div className='md:ml-[600px] flex flex-col md:flex-row '>
       
       <div className='flex flex-col gap-5 md:w-[700px] mx-3'>
         <h2 className='text-white text-xl font-semibold mt-6'>SELECT PAYMENT METHOD</h2>

@@ -5,14 +5,13 @@ import hometwo from '../assets/freepik__i-want-a-photo-there-must-jewels-sling-b
 import homethree from '../assets/HM-IMG2.webp'
 import Footer from '../Component/Footer';
 import Products from './Products';
-import { useState } from 'react';
-import Navbar from '../Component/Navbar';
+
 import { useSearchParams } from 'react-router-dom';
 
 
 const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState('');
+
 
   
   const category = searchParams.get('category') || '';
@@ -34,24 +33,27 @@ const Home = () => {
   return (
     <div >
       
-      <Navbar onSearch={setSearch}/>
+     
       {/* home view */}
-      <div className=' w-full h-[440px] pt-12  '>
-        <div >
-          <img className=' w-[1510px] h-96 flex-shrink-0 object-cover object-center ' src={homeone} />
+      <div className='flex flex-col gap-5'>
+          <div className=' w-full  '>
+          <div >
+            <img className=' w-[1510px] h-96 flex-shrink-0 object-cover object-center ' src={homeone} />
+          </div>
+        </div>
+        <div className='  w-full h-96 '>
+          <div >
+            <img className='w-[1510px] h-96 flex-shrink-0 object-cover object-center' src={hometwo} />
+          </div>
+        </div>
+          
+        <div className=' w-full h-96  '>
+          <div >
+            <img className='w-[1510px] h-96 flex-shrink-0 object-cover object-center' src={homethree} />
+          </div>
         </div>
       </div>
-      <div className=' h w-full h-96 mt-5  '>
-        <div >
-          <img className='w-[1510px] h-96 flex-shrink-0 object-cover object-center' src={hometwo} />
-        </div>
-      </div>
-        
-      <div className=' w-full h-96  mt-5 '>
-         <div >
-          <img className='w-[1510px] h-96 flex-shrink-0 object-cover object-center' src={homethree} />
-        </div>
-      </div>
+      
        {/* category */}
       
        {/* Category Buttons */}
@@ -91,7 +93,7 @@ const Home = () => {
       
       </div>
       
-      <Products category={category} search={search }/>
+      <Products category={category} />
       
       <Footer />
       
