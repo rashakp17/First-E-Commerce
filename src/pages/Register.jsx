@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import Input from "../Component/input";
 
 
 const Register = () =>{
@@ -13,9 +14,9 @@ const Register = () =>{
   }
 
   return (
-     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8">
-        <h2 className="text-3xl font-semibold text-center mb-6">Create Account</h2>
+     <div className="min-h-screen flex items-center justify-center  px-4">
+      <div className="w-full max-w-md bg-slate-400 shadow-xl rounded-2xl p-8">
+        <h2 className="text-3xl font-semibold text-center mb-6 text-white">Create Account</h2>
 
         <form onSubmit={handleSubmit} className="w-full">
           <Input

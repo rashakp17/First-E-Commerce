@@ -3,7 +3,7 @@ const Input =({label, type ,value ,onChange , placeholder})=>{
     <div className="flex flex-col w-full mb-4">
       <label className="texr-sm font-medium text-gray-700">{label}</label>
 
-      <Input
+      <input
        type={type}
        value={value}
        onChange={onChange}
