@@ -15,9 +15,10 @@ const Login =()=>{
 
   return (
     <div className="min-h-screen flex items-center justify-center  px-4">
-      <div className="w-full max-w-md bg-slate-400 shadow-xl rounded-2xl p-8">
-        <Link to="/"><button className="te">x</button></Link>  
+      <div className="w-full max-w-md bg-slate-400 shadow-xl rounded-2xl p-8 relative ">
+        <Link to="/"><button className="flex justify-items-start ml-[370px] text-xl">×</button></Link>  
         <h2 className="text-2xl font-semibold text-center mb-6 text-white">Login</h2>
+        
 
         <form onSubmit={handleSubmit} className="w-full">
           <Input
