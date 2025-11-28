@@ -10,12 +10,11 @@ const Checkout = () => {
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
-    house: '',
-    road: '',
-    pincode: '',
+    email:'',
+    zipcode: '',
     city: '',
     state: '',
-    landmark: '',
+    landmark:''
   });
 
   const [errors, setErrors] = useState({});
@@ -31,9 +30,8 @@ const Checkout = () => {
     const newErrors = {};
     if (!formData.name) newErrors.name = 'Name is required';
     if (!formData.contact) newErrors.contact = 'Contact is required';
-    if (!formData.house) newErrors.house = 'House number is required';
-    if (!formData.road) newErrors.road = 'Road/Area is required';
-    if (!formData.pincode) newErrors.pincode = 'Pincode is required';
+    if (!formData.email) newErrors.email = 'Email is required';
+    if (!formData.pincode) newErrors.zipcode = 'Zipcode is required';
     if (!formData.city) newErrors.city = 'City is required';
     if (!formData.state) newErrors.state = 'State is required';
     return newErrors;
@@ -76,26 +74,18 @@ const Checkout = () => {
           />
           {errors.contact && <p className='text-red-500 text-sm'>{errors.contact}</p>}
 
+           <input
+            name="email"
+            placeholder="Email"
+            className='border-b border-gray-400 focus:border-black outline-none w-80 input bg-transparent text-white'
+            onChange={handleChange}
+          />
+          {errors.email && <p className='text-red-500 text-sm'>{errors.email}</p>}
+
           <div className='flex flex-row gap-2'>
             <img className='mt-1 h-[18px] w-[18px]' src={locationimg} />
             <h3 className='text-white'>ADDRESS</h3>
           </div>
-
-          <input
-            name="house"
-            placeholder="House no./Building no."
-            className='border-b border-gray-400 focus:border-black outline-none w-80 input bg-transparent text-white'
-            onChange={handleChange}
-          />
-          {errors.house && <p className='text-red-500 text-sm'>{errors.house}</p>}
-
-          <input
-            name="road"
-            placeholder="Roas name /Area /Colony"
-            className='border-b border-gray-400 focus:border-black outline-none w-80 input bg-transparent text-white'
-            onChange={handleChange}
-          />
-          {errors.road && <p className='text-red-500 text-sm'>{errors.road}</p>}
 
           <input
             name="pincode"

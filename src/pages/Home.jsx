@@ -31,11 +31,11 @@ const Home = () => {
 
 
   return (
-    <div >
+    <div className='mt-0'>
       
      
       {/* home view */}
-      <div className='flex flex-col gap-5'>
+      <div className='flex flex-col gap-5 mt-0 pt-0'>
           <div className=' w-full  '>
           <div >
             <img className=' w-[1510px] h-96 flex-shrink-0 object-cover object-center ' src={homeone} />
