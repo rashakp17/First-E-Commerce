@@ -3,9 +3,17 @@ import callimg from '../assets/icons8-call-50.png';
 import locationimg from '../assets/icons8-location-50.png';
 import OrderSummary from '../Component/OrderSummary';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { clearCart } from '../Features/CartSlice';
 
 const Checkout = () => {
   const navigate = useNavigate();
+const dispatch = useDispatch();
+const cartItems = useSelector((state) => state.cart.cartItems);
+
+const [loading, setLoading] = useState(false);
+const [apiError, setApiError] = useState('');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -37,13 +45,58 @@ const Checkout = () => {
     return newErrors;
   };
 
-  const handleSubmit = () => {
-    const validationErrors = validate();
-    setErrors(validationErrors);
-    if (Object.keys(validationErrors).length === 0) {
-      navigate('/payment');
-    }
+  // const handleSubmit = () => {
+  //   const validationErrors = validate();
+  //   setErrors(validationErrors);
+  //   if (Object.keys(validationErrors).length === 0) {
+  //     navigate('/payment');
+  //   }
+  // };
+  const handleSubmit = async () => {
+  const validationErrors = validate();
+  setErrors(validationErrors);
+  if (Object.keys(validationErrors).length > 0) return;
+
+  try {
+  setLoading(true);
+  setApiError('');
+
+    // Build orderData from cart + address form
+  const orderData = {
+    items: cartItems.map((item) => ({
+      productId: item.id,
+      title: item.title,
+      quantity: item.quantity,
+      price: item.price,
+    })),
+    address: {
+      name: formData.name,
+      contact: formData.contact,
+      email: formData.email,
+      pincode: formData.pincode,
+      city: formData.city,
+      state: formData.state,
+      landmark: formData.landmark,
+    },
+    // You can add total, paymentMethod, etc. here
   };
+
+  // Call backend to create order
+  const res = await axios.post('/api/orders', orderData);
+  console.log('Order created:', res.data);
+
+  // Optionally clear cart (local or via backend thunk)
+  dispatch(clearCart());
+
+  // Go to payment or success page
+  navigate('/payment');
+  } catch (err) {
+  setApiError(err.response?.data?.message || 'Failed to place order');
+  } finally {
+  setLoading(false);
+  }
+  };
+    
 
   return (
     
@@ -120,11 +173,13 @@ const Checkout = () => {
           />
 
           <button
-            className='mt-2 px-4  text-sm md:w-[400px]  w-80 text-white bg-gray-500 md:text-lg h-10 rounded-lg hover:bg-gray-700 mb-4 active:bg-gray-400 active:bg-opacity-50'
-            onClick={handleSubmit}
-          >
-            SAVE ADDRESS AND CONTINUE
+          className='mt-2 px-4 text-sm md:w-[400px] w-80 text-white bg-gray-500 md:text-lg h-10 rounded-lg hover:bg-gray-700 mb-4 active:bg-gray-400 active:bg-opacity-50'
+          onClick={handleSubmit}
+          disabled={loading}>
+
+          {loading ? 'PROCESSING...' : 'SAVE ADDRESS AND CONTINUE'}
           </button>
+          {apiError && <p className="text-red-500 text-sm mt-2">{apiError}</p>}
         </div>
 
         <div className=' mb-10 '>

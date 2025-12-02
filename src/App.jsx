@@ -10,6 +10,7 @@ import Payment from './pages/Payment';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { Outlet } from 'react-router-dom';
+import ProtectedRoute from './ProtectedRoute';
 
 function Layout({ onSearch }) {
   return (
@@ -34,9 +35,11 @@ function App() {
           <Route index element={<Home />} />
           <Route path='products' element={<Products search={search} />} />
           <Route path='products/:id' element={<ProductDetails />} />
-          <Route path='cart' element={<Cart />} />
-          <Route path='checkout' element={<Checkout />} />
-          <Route path='payment' element={<Payment />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path='cart' element={<Cart />} />
+            <Route path='checkout' element={<Checkout />} />
+            <Route path='payment' element={<Payment />} />
+          </Route>
           
         </Route>
       </Routes>

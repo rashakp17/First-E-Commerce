@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import Input from "../Component/input";
+import axios from "axios";
 
 
 const Register = () =>{
@@ -8,10 +9,17 @@ const Register = () =>{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e)=>{
-    e.preventDefault();
-    console.log({ name, email, password});
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await axios.post('/api/register', { name,email, password });
+    console.log(res.data); // token, user, etc.
+    // save token, redirect, etc.
+  } catch (err) {
+    console.error(err.response?.data || err.message);
   }
+};
+  
 
   return (
      <div className="min-h-screen flex items-center justify-center  px-4">
