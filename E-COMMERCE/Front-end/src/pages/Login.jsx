@@ -18,7 +18,7 @@ const Login =()=>{
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await axios.post('http://localhost:5000/api/users/login', { email, password });
+    const res = await axios.post('/api/users/login', { email, password });
     console.log(res.data); // token, user, etc.
     // save token, redirect, etc.
     dispatch(
@@ -65,7 +65,7 @@ const Login =()=>{
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button
+          <button 
             className="w-full bg-black text-white py-3 rounded-lg text-lg font-medium 
                        hover:bg-gray-900 transition"
           >
