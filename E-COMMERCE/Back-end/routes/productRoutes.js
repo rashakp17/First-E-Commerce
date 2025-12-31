@@ -5,7 +5,7 @@ const auth = require('../Middleware/auth');
 const adminOnly = require('../Middleware/adminOnly');
 const multer = require('multer');
 const path = require('path');
-
+const cloudinary = require('../cloudinary');
 const router = express.Router();
 
 /* ---------- Multer config for this router ---------- */
@@ -25,17 +25,30 @@ const upload = multer({ storage });
 
 /* ---------- Image upload route (separate) ---------- */
 // POST /api/products/uploadimage
-router.post('/uploadimage', upload.single('image'), (req, res) => {
+// NEW - Cloudinary upload
+router.post('/uploadimage', upload.single('image'), async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ message: 'No file uploaded' });
   }
 
-  const imageUrl = `/uploads/${req.file.filename}`;
+  try {
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: 'ecommerce/products',  // Organize in Cloudinary
+      resource_type: 'auto',         // Handles images/videos
+    });
 
-  return res.status(201).json({
-    message: 'product image uploaded',
-    imageUrl,
-  });
+    // Clean up local temp file
+    fs.unlinkSync(req.file.path);
+
+    return res.status(201).json({
+      message: 'Image uploaded to Cloudinary',
+      imageUrl: result.secure_url,    // ✅ Permanent CDN URL
+      public_id: result.public_id,    // For deleting later
+    });
+  } catch (error) {
+    console.error('Cloudinary upload error:', error);
+    return res.status(500).json({ message: 'Image upload failed' });
+  }
 });
 
 /* ---------- Create product (admin only) ---------- */

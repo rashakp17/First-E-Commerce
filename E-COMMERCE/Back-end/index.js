@@ -10,6 +10,7 @@ const cartRoutes = require('./routes/cartRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const razorpayPaymentRoutes = require('./routes/paymentRazorpay');
 
+
 const app = express();
 app.use(express.json());
 app.use(cors());
