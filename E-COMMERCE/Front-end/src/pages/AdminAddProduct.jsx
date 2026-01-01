@@ -20,7 +20,7 @@ const AdminAddProduct = () => {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-
+  const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
   const handleChange = (e) => {
     setForm((prev) => ({
       ...prev,
@@ -44,7 +44,7 @@ const AdminAddProduct = () => {
       data.append('image', imageFile);
 
       const res = await axios.post(
-        'http://localhost:5000/api/products/uploadimage',
+        `${API_BASE}/api/products/uploadimage`,
         data,
         {
           headers: {

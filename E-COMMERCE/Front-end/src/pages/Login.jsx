@@ -5,7 +5,7 @@ import Input from "../Component/input";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "../Features/AuthSlice";
-
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 
 const Login =()=>{
@@ -18,7 +18,7 @@ const Login =()=>{
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await axios.post('/api/users/login', { email, password });
+    const res = await axios.post(`${API_BASE}/api/users/login`, { email, password });
     console.log(res.data); // token, user, etc.
     // save token, redirect, etc.
     dispatch(
